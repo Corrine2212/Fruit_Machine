@@ -71,7 +71,15 @@ public class FruitMachine {
         return reels;
     }
 
-    public double calculateWinnings(ArrayList<Integer> reels){
+    public double calculateWinnings(ArrayList<Integer> reels) {
+        int symbolValue = reels.get(0);
+        for (int i = 1; i < reels.size(); i++) {
+            if (reels.get(i) != symbolValue) {
+                return 0.0; // No win
+            }
+        }
+        return symbolValue * 3; // Multiply by 3 for three matching symbols
+    }
 
     }
-}
+

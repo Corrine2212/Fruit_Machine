@@ -14,6 +14,7 @@ public class FruitMachineTest {
     @Before
     public void before() {
         fruitMachine = new FruitMachine(3);
+        reels = new ArrayList<>();
     }
 
     @Test
@@ -29,7 +30,10 @@ public class FruitMachineTest {
 
     @Test
     public void canCalculateWin() {
-        assertEquals(9, fruitMachine.calculateWinnings([3, 3, 3]));
+        reels.add(3);
+        reels.add(3);
+        reels.add(3);
+        assertEquals(9, fruitMachine.calculateWinnings(reels),0.0);
     }
 
 }
